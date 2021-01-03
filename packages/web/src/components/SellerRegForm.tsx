@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const ConfirmFormCon = styled.div`
+export const SellerRegFormCon = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -10,21 +9,19 @@ export const ConfirmFormCon = styled.div`
   margin-top: 100px;
 `;
 
-const ConfirmForm = () => {
+const SellerRegForm = () => {
   return (
-    <ConfirmFormCon>
-      <h3>کد تایید</h3>
+    <SellerRegFormCon>
+      <h3>ثبت نام فروشنده</h3>
       <form style={{ alignSelf: "center" }}>
-        <label style={{ margin: "0px 10px" }}>کد را وارد کنید</label>
-        <a href="/Home">
-          <label style={{ margin: "0px 10px" }}>ویرایش شماره</label>
-        </a>
+        <label style={{ margin: "0px 10px" }}>شماره ملی خود را وارد کنید</label>
         <br />
         <input style={{ margin: "10px" }} type="text"></input>
         <br />
         <button style={{ margin: "10px", width: "80%" }}>دریافت کد</button>
       </form>
-    </ConfirmFormCon>
+    </SellerRegFormCon>
   );
 };
-export default ConfirmForm;
+
+export default SellerRegForm;

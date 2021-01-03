@@ -5,9 +5,9 @@ import { Logo } from "../sharedCompnents/Logo";
 import { Wrapper } from "../sharedCompnents/Wrapper";
 import logo from "../Logo.jpg";
 import phone from "../Phone.jpeg";
-import InputForm from "./InputForm";
+import SellerRegForm from "./SellerRegForm";
 
-const Home = () => {
+export const SellerReg = () => {
   return (
     <Wrapper>
       <Context>
@@ -24,11 +24,9 @@ const Home = () => {
             src={phone}
             alt="phone"
           />
-          <InputForm />
+          <SellerRegForm />
         </FormContainer>
       </Context>
     </Wrapper>
   );
 };
-
-export default Home;
