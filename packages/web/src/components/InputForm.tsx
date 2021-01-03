@@ -1,10 +1,9 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 // import { useDispatch } from "react-redux";
 import styled from "styled-components";
 // import { setPhoneAction } from "../States/phoneSlicer";
 // import { AppDispatch } from "../States/Store";
-import { useForm } from "react-hook-form";
-import { stringify } from "querystring";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 export const InputFormCon = styled.div`
   display: flex;
@@ -21,100 +20,115 @@ export const ConfirmFormCon = styled.div`
   flex-direction: column;
   margin-top: 100px;
 `;
+type PhoneValue = {
+  phone: string;
+  code: string;
+};
 
 const InputForm = () => {
-  // const [phone, setPhone] = useState("");
+  const [phoneExist, setPhoneExist] = useState("");
+  const { register, handleSubmit, errors, reset } = useForm<PhoneValue>();
 
   // const dispatch = useDispatch<AppDispatch>();
-
-  // const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   dispatch(setPhoneAction(Number(phone)));
+  // const componentDidMount = () => {
+  //   return localStorage.getItem(phone);
   // };
-  const { register, handleSubmit, errors } = useForm();
+  useEffect(() => {
+    const localStoragePhone = localStorage.getItem("phoneExist");
+    localStoragePhone && setPhoneExist(localStoragePhone);
+  }, []);
+  const onSubmit: SubmitHandler<PhoneValue> = (data) => {
+    console.log("inside HandleSubmit", data);
+    const doSendCode = (code: string) => {
+      console.log("inside doSendCode", code);
+      setPhoneExist("");
+      reset();
+      localStorage.removeItem("phoneExist");
+    };
+    const doSendPhone = (phone: string) => {
+      console.log("inside doSendPhone", phone);
+      setPhoneExist(phone);
+      reset();
+      localStorage.setItem("phoneExist", phone);
+    };
+    phoneExist ? doSendCode(data.code) : doSendPhone(data.phone);
+  };
 
-  let phoneNumberIsTrue = false;
-
-  const onSubmit = handleSubmit(async ({ phoneInput }) => {
-    if (phoneInput) phoneNumberIsTrue = true;
-    else phoneNumberIsTrue = false;
-    console.log(phoneInput);
-  });
-
-  console.log("render");
-
-  return phoneNumberIsTrue === false ? (
+  return (
     <InputFormCon>
       <h3>ورود</h3>
-      <form style={{ alignSelf: "center" }} onSubmit={onSubmit}>
-        <label>شماره تلفن خود را وارد کنید</label>
-        <br />
-        <input
-          id="phone"
-          type="number"
-          name="phoneInput"
-          style={{ margin: "10px 10px" }}
-          ref={register({
-            required: true,
-            minLength: 5,
-          })}
-        />
+      <form
+        name="setPhone"
+        style={{ alignSelf: "center" }}
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        {phoneExist ? (
+          <>
+            <label style={{ margin: "0px 10px" }}>کد را وارد کنید</label>
+            <a href="/Home">
+              <label style={{ margin: "0px 10px" }}>ویرایش شماره</label>
+            </a>
+            <br />
+            <input
+              style={{ margin: "10px" }}
+              type="text"
+              name="code"
+              ref={register({ minLength: 5 })}
+            />
+            {errors.code && (
+              <p style={{ fontSize: "10px", margin: "0", color: "red" }}>
+                {" "}
+                This is required
+              </p>
+            )}
 
-        {errors.phoneInput && errors.phoneInput.type === "required" && (
-          <p
-            style={{
-              fontSize: "10px",
-              padding: "0",
-              margin: "0px",
-              color: "red",
-            }}
-          >
-            این کادر الزامی است
-          </p>
-        )}
-        {errors.phoneInput && errors.phoneInput.type === "minLength" && (
-          <p
-            style={{
-              fontSize: "10px",
-              padding: "0",
-              margin: "0px",
-              color: "red",
-            }}
-          >
-            حداقل ۵ کارکتر
-          </p>
+            <br />
+          </>
+        ) : (
+          <>
+            <label>شماره تلفن خود را وارد کنید</label>
+            <br />
+            <input
+              id="phone"
+              type="number"
+              name="phone"
+              style={{ margin: "10px 10px" }}
+              ref={register({
+                minLength: 5,
+              })}
+            />
+
+            {errors.phone && errors.phone.type === "required" && (
+              <p
+                style={{
+                  fontSize: "10px",
+                  padding: "0",
+                  margin: "0px",
+                  color: "red",
+                }}
+              >
+                این کادر الزامی است
+              </p>
+            )}
+            {errors.phone && errors.phone.type === "minLength" && (
+              <p
+                style={{
+                  fontSize: "10px",
+                  padding: "0",
+                  margin: "0px",
+                  color: "red",
+                }}
+              >
+                حداقل ۵ کارکتر
+              </p>
+            )}
+          </>
         )}
         <button type="submit" style={{ width: "65%" }}>
-          دریافت کد
+          {phoneExist ? "ورود" : "دریافت کد"}
         </button>
       </form>
     </InputFormCon>
-  ) : (
-    <ConfirmFormCon>
-      <h3>کد تایید</h3>
-      <form style={{ alignSelf: "center" }} onSubmit={onSubmit}>
-        <label style={{ margin: "0px 10px" }}>کد را وارد کنید</label>
-        <a href="/Home">
-          <label style={{ margin: "0px 10px" }}>ویرایش شماره</label>
-        </a>
-        <br />
-        <input
-          style={{ margin: "10px" }}
-          type="text"
-          name="confirmInput"
-          ref={register({ required: true, minLength: 5 })}
-        />
-        {errors.confirmInput && (
-          <p style={{ fontSize: "10px", margin: "0", color: "red" }}>
-            {" "}
-            This is required
-          </p>
-        )}
-
-        <br />
-        <button style={{ margin: "10px", width: "80%" }}>دریافت کد</button>
-      </form>
-    </ConfirmFormCon>
   );
 };
 export default InputForm;
