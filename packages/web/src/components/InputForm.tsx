@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { useDispatch } from "react-redux";
 import styled from "styled-components";
 // import { setPhoneAction } from "../States/phoneSlicer";
@@ -37,16 +37,14 @@ const InputForm = () => {
     const localStoragePhone = localStorage.getItem("phoneExist");
     localStoragePhone && setPhoneExist(localStoragePhone);
   }, []);
+
   const onSubmit: SubmitHandler<PhoneValue> = (data) => {
-    console.log("inside HandleSubmit", data);
     const doSendCode = (code: string) => {
-      console.log("inside doSendCode", code);
       setPhoneExist("");
       reset();
       localStorage.removeItem("phoneExist");
     };
     const doSendPhone = (phone: string) => {
-      console.log("inside doSendPhone", phone);
       setPhoneExist(phone);
       reset();
       localStorage.setItem("phoneExist", phone);
@@ -94,11 +92,12 @@ const InputForm = () => {
               name="phone"
               style={{ margin: "10px 10px" }}
               ref={register({
-                minLength: 5,
+                pattern: /^(0)?9\d{9}$/,
+                minLength: 11,
               })}
             />
 
-            {errors.phone && errors.phone.type === "required" && (
+            {errors.phone && errors.phone.type === "pattern" && (
               <p
                 style={{
                   fontSize: "10px",
@@ -107,9 +106,10 @@ const InputForm = () => {
                   color: "red",
                 }}
               >
-                این کادر الزامی است
+                شماره تلفن درست وارد نشده
               </p>
             )}
+
             {errors.phone && errors.phone.type === "minLength" && (
               <p
                 style={{
@@ -119,7 +119,7 @@ const InputForm = () => {
                   color: "red",
                 }}
               >
-                حداقل ۵ کارکتر
+                حداقل 11 کارکتر
               </p>
             )}
           </>
