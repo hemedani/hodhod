@@ -4,7 +4,7 @@ import { FormContainer } from "../sharedCompnents/FormContainer";
 import { Wrapper } from "../sharedCompnents/Wrapper";
 import styled from "styled-components";
 
-export const SellerRegFormCon = styled.div`
+export const CenterRegFormCon = styled.div`
   display: flex;
   align-items: flex-end;
   flex-direction: column;
@@ -21,36 +21,32 @@ export const FormDiv = styled.div`
   margin: 40px;
 `;
 
-export const SellerRegForm = () => {
+export const CenterRegForm = () => {
   return (
-    <SellerRegFormCon>
-      <h3 style={{ marginRight: "60px" }}>اطلاعات کاربر</h3>
+    <CenterRegFormCon>
+      <h3 style={{ marginRight: "60px" }}>اطلاعات فروشگاه</h3>
       <form style={{ marginRight: "0px" }}>
         <FormDiv>
-          <FormLabel>نام</FormLabel> <input type="text" name="name" />
-          <FormLabel> نام خانوادگی</FormLabel> <input type="text" name="name" />
-          <FormLabel>کد ملی</FormLabel> <input type="text" name="name" />
+          <FormLabel>نام فروشگاه</FormLabel> <input type="text" name="name" />
+          <FormLabel> دسته بندی</FormLabel> <input type="text" name="name" />
+          <FormLabel>تلفن فروشگاه</FormLabel> <input type="text" name="name" />
         </FormDiv>
         <FormDiv>
-          <FormLabel>شماره همراه</FormLabel> <input type="text" name="name" />
-          <FormLabel>تلفن ثابت</FormLabel> <input type="text" name="name" />
           <FormLabel>کشور</FormLabel> <input type="text" name="name" />
-        </FormDiv>
-        <FormDiv>
           <FormLabel>استان</FormLabel> <input type="text" name="name" />
-          <FormLabel>شهر</FormLabel>
-          <input type="text" name="name" />
-          <FormLabel>محله</FormLabel> <input type="text" name="name" />
+          <FormLabel>شهر</FormLabel> <input type="text" name="name" />
         </FormDiv>
         <FormDiv>
-          <FormLabel>آدرس</FormLabel> <input type="text" name="name" />
+          <FormLabel>محله</FormLabel> <input type="text" name="name" />
+          <FormLabel>آدرس</FormLabel>
+          <input type="text" name="name" />
         </FormDiv>
       </form>
-    </SellerRegFormCon>
+    </CenterRegFormCon>
   );
 };
 
-export const SellerReg = () => {
+export const CenterReg = () => {
   return (
     <Wrapper>
       <Context>
@@ -63,7 +59,7 @@ export const SellerReg = () => {
             boxShadow: "10px",
           }}
         >
-          <SellerRegForm />
+          <CenterRegForm />
         </FormContainer>
       </Context>
     </Wrapper>

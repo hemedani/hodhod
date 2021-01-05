@@ -23,7 +23,7 @@ export default function NavBar() {
           </MenuItem>
           <MenuItem>درباره ما</MenuItem>
           <MenuItem>
-            <Link to="/sellerdatainput">sellerData</Link>
+            <Link to="/sellerdatainput">seller</Link>
           </MenuItem>
         </Menu>
       </Container>

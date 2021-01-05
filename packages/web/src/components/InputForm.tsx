@@ -54,7 +54,7 @@ const InputForm = () => {
 
   return (
     <InputFormCon>
-      <h3>ورود</h3>
+      {phoneExist ? <h3>کد تایید</h3> : <h3>ورود</h3>}
       <form
         name="setPhone"
         style={{ alignSelf: "center" }}
@@ -125,7 +125,7 @@ const InputForm = () => {
           </>
         )}
         <button type="submit" style={{ width: "65%" }}>
-          {phoneExist ? "ورود" : "دریافت کد"}
+          {phoneExist ? "تایید" : "دریافت کد"}
         </button>
       </form>
     </InputFormCon>
