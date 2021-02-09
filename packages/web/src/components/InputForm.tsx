@@ -4,22 +4,17 @@ import styled from "styled-components";
 // import { setPhoneAction } from "../States/phoneSlicer";
 // import { AppDispatch } from "../States/Store";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { TextInput } from "../sharedCompnents/TextInput";
+import { ButtonConfirm } from "../sharedCompnents/ButtonConfirm";
 
 export const InputFormCon = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
   flex-direction: column;
-  margin-top: 100px;
+  /* margin-top: 100px; */
 `;
 
-export const ConfirmFormCon = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  flex-direction: column;
-  margin-top: 100px;
-`;
 type PhoneValue = {
   phone: string;
   code: string;
@@ -67,8 +62,8 @@ const InputForm = () => {
               <label style={{ margin: "0px 10px" }}>ویرایش شماره</label>
             </a>
             <br />
-            <input
-              style={{ margin: "10px" }}
+            <TextInput
+              style={{ margin: "10px", width: "50%" }}
               type="text"
               name="code"
               ref={register({ minLength: 5 })}
@@ -86,11 +81,11 @@ const InputForm = () => {
           <>
             <label>شماره تلفن خود را وارد کنید</label>
             <br />
-            <input
+            <TextInput
               id="phone"
               type="number"
               name="phone"
-              style={{ margin: "10px 10px" }}
+              style={{ margin: "10px 10px", width: "50%" }}
               ref={register({
                 pattern: /^(0)?9\d{9}$/,
                 minLength: 11,
@@ -124,9 +119,9 @@ const InputForm = () => {
             )}
           </>
         )}
-        <button type="submit" style={{ width: "65%" }}>
+        <ButtonConfirm type="submit" style={{ width: "65%" }}>
           {phoneExist ? "تایید" : "دریافت کد"}
-        </button>
+        </ButtonConfirm>
       </form>
     </InputFormCon>
   );

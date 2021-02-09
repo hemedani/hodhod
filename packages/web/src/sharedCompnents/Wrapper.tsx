@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: stretch;
-  align-items: stretch;
-  height: 80vh;
+  flex-direction: row;
+  justify-content: space-between;
+  /* min-width: 100vw;
+  min-height: 100vh; */
+  border: 1px solid blue;
 `;

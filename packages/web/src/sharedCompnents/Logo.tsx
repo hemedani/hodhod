@@ -1,11 +1,19 @@
 import styled from "styled-components";
-const shadowValues = "-0.1em 0.3em 2em -0.5em #e4e4e4";
+const shadowValues = "-0.1em 0.3em 2em -0.5em #c2bebe";
 export const Logo = styled.div`
-  margin: 20px 0px 20px 20px;
-  min-height: 70vh;
-  min-width: 40vw;
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 90%;
+  width: 90%;
+  /* min-height: 40%; */
+  /* min-width: 40vw; */
+  margin: 20px;
   border: 0.1rem solid #e4e4e4;
   box-shadow: ${shadowValues};
   border-radius: 0.3rem;
+  overflow: hidden;
+  > img {
+    width: 100%;
+  }
 `;
