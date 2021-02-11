@@ -2,7 +2,6 @@ import React from "react";
 import { FormContainer } from "../sharedCompnents/FormContainer";
 import styled from "styled-components";
 import { TextInput } from "../sharedCompnents/TextInput";
-import { AddressInput } from "../sharedCompnents/AddressInput";
 import map from "../Map.png";
 import upload from "../Upload.png";
 import { Card, CardElement } from "../sharedCompnents/Card";
@@ -47,7 +46,7 @@ export const CenterCard = () => {
               <TextInput type="text" name="name" placeholder="محله" />
             </CardElement>
             <CardElement>
-              <AddressInput
+              <TextInput
                 style={{ width: "30rem" }}
                 type="text"
                 name="name"

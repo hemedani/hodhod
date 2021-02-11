@@ -2,7 +2,6 @@ import styled from "styled-components";
 export const Card = styled.div`
   display: flex;
   flex-direction: row-reverse;
-  margin-right: 40px;
   flex-wrap: wrap;
   /* margin-right: 6rem; */
   /* justify-content: space-around; */

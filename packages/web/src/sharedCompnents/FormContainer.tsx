@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const shadowValues = "-0.1em 0.3em 2em -0.5em #c2bebe";
+export const shadowValues = "-0.1em 0.3em 2em -0.5em #c2bebe";
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
