@@ -1,11 +1,12 @@
 import React from "react";
-import { FormContainer } from "../sharedCompnents/FormContainer";
 import styled from "styled-components";
-import { TextInput } from "../sharedCompnents/TextInput";
+import { Input } from "../sharedCompnents/TextInput";
 import map from "../Map.png";
 import upload from "../Upload.png";
-import { Card, CardElement } from "../sharedCompnents/Card";
-import { ButtonConfirm } from "../sharedCompnents/ButtonConfirm";
+import { Button } from "../sharedCompnents/ButtonConfirm";
+import { Box, Card } from "./Box";
+import { Wrapper } from "../sharedCompnents/Wrapper";
+import { items } from "../sharedCompnents/CenterCardElements";
 
 export const CenterRegFormCon = styled.div`
   display: flex;
@@ -14,79 +15,39 @@ export const CenterRegFormCon = styled.div`
 `;
 
 export const CenterCard = () => {
+  const elements = items.map((item) => (
+    <Input name={item.name} type={item.type} placeholder={item.placeholder} />
+  ));
+
   return (
-    <FormContainer>
-      <CenterRegFormCon>
-        <h3 style={{ marginRight: "60px", alignSelf: "flex-end" }}>
-          اطلاعات فروشگاه
-        </h3>
-        <form style={{ marginRight: "0px" }}>
-          <Card>
-            <CardElement>
-              <TextInput type="text" name="name" placeholder="نام فروشگاه" />
-            </CardElement>
-            <CardElement>
-              <TextInput type="text" name="name" placeholder="دسته بندی" />
-            </CardElement>
-            <CardElement>
-              <TextInput type="text" name="name" placeholder="تلفن فروشگاه" />
-            </CardElement>
+    <Wrapper>
+      <Card>{elements}</Card>
 
-            <CardElement>
-              <TextInput type="text" name="name" placeholder="کشور" />
-            </CardElement>
-            <CardElement>
-              <TextInput type="text" name="name" placeholder="استان" />
-            </CardElement>
-            <CardElement>
-              <TextInput type="text" name="name" placeholder="شهر" />
-            </CardElement>
-
-            <CardElement>
-              <TextInput type="text" name="name" placeholder="محله" />
-            </CardElement>
-            <CardElement>
-              <TextInput
-                style={{ width: "30rem" }}
-                type="text"
-                name="name"
-                placeholder="آدرس"
-              />
-            </CardElement>
-          </Card>
-        </form>
-        <FormContainer
+      <Box>
+        <img
+          src={upload}
+          alt="map"
           style={{
-            boxShadow: "none",
-            border: "none",
+            width: "10rem",
+            height: "10rem",
           }}
-        >
-          <Card>
-            <CardElement>
-              <img
-                src={upload}
-                alt="map"
-                style={{
-                  width: "10rem",
-                  height: "10rem",
-                }}
-              />
-            </CardElement>
-            <CardElement>
-              <img
-                src={map}
-                alt="map"
-                style={{
-                  width: "40rem",
-                  height: "10rem",
-                }}
-              />
-            </CardElement>
-          </Card>
-          <ButtonConfirm>ثبت نام</ButtonConfirm>
-          <ButtonConfirm>لغو</ButtonConfirm>
-        </FormContainer>
-      </CenterRegFormCon>
-    </FormContainer>
+        />
+      </Box>
+      <Box>
+        <img
+          src={map}
+          alt="map"
+          style={{
+            width: "40rem",
+            height: "10rem",
+          }}
+        />
+      </Box>
+
+      <Button buttonText={"submit"} backgroundcolor={"white"}>
+        ثبت نام
+      </Button>
+      <Button backgroundcolor={"white"}>لغو</Button>
+    </Wrapper>
   );
 };

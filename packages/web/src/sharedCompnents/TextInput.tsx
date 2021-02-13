@@ -1,4 +1,3 @@
-import { AnyARecord } from "dns";
 import styled from "styled-components";
 export const CardElement = styled.div`
   display: flex;
@@ -9,7 +8,8 @@ export const CardElement = styled.div`
 interface Props {
   placeholder?: string;
   dir?: string;
-  type: "email" | "password" | "number" | "text";
+  type: "email" | "password" | "number" | "text" | string;
+  name?: string;
   onClick?: () => any;
   onChange?: () => any;
 }
@@ -40,10 +40,10 @@ export const TextInput = styled.input.attrs((props) => ({
   }
 `;
 
-export const Input: React.FC<Props> = ({ dir, placeholder, type }) => {
+export const Input: React.FC<Props> = ({ dir, placeholder, type, name }) => {
   return (
     <CardElement>
-      <TextInput type={type} dir={dir} placeholder={placeholder} />
+      <TextInput name={name} type={type} dir={dir} placeholder={placeholder} />
     </CardElement>
   );
 };

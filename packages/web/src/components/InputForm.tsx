@@ -5,7 +5,7 @@ import styled from "styled-components";
 // import { AppDispatch } from "../States/Store";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { TextInput } from "../sharedCompnents/TextInput";
-import { ButtonConfirm } from "../sharedCompnents/ButtonConfirm";
+import { Button } from "../sharedCompnents/ButtonConfirm";
 
 export const InputFormCon = styled.div`
   display: flex;
@@ -119,9 +119,9 @@ const InputForm = () => {
             )}
           </>
         )}
-        <ButtonConfirm type="submit" style={{ width: "65%" }}>
+        <Button buttonText={"submit"} backgroundcolor={"white"}>
           {phoneExist ? "تایید" : "دریافت کد"}
-        </ButtonConfirm>
+        </Button>
       </form>
     </InputFormCon>
   );
