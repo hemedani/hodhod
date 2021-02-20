@@ -14,9 +14,11 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "leaflet": "^1.7.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.13.1",
+    "react-leaflet": "^3.1.0",
     "react-object-fit-cover": "^1.0.0",
     "react-redux": "^7.2.2",
     "react-router": "^5.2.0",
@@ -52,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "@types/leaflet": "^1.5.23",
     "@types/react-redux": "^7.1.14",
     "@types/react-router": "^5.1.9",
     "@types/react-router-dom": "^5.1.6",
