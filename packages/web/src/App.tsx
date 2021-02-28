@@ -1,20 +1,15 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-
-import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { SellerRegistration } from "./components/SellerRegistration";
+import NavBar from "./module/components/navbar/NavBar";
+import { Router } from "./routes/Router";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <NavBar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/sellerdatainput" component={SellerRegistration} />
-        </Switch>
+        <Router />
       </div>
     </BrowserRouter>
   );
