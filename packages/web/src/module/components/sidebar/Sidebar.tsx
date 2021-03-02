@@ -15,11 +15,11 @@ export const Sidebar = () => {
       <SidebarParent>
         {SidebarItems.map((item, index) => {
           return (
-            <Link to={item.route}>
-              <SidebarItem key={index} isActive={index === activeIndex}>
+            <SidebarItem key={index} isActive={index === activeIndex}>
+              <Link to={item.route}>
                 <p>{item.name} </p>
-              </SidebarItem>
-            </Link>
+              </Link>
+            </SidebarItem>
           );
         })}
       </SidebarParent>
@@ -34,11 +34,9 @@ interface Props {
 export const SideMenu = styled.nav`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  background: blue;
+  background: #376495;
   min-height: 100%;
   text-align: right;
-  padding: 1rem;
   position: sticky;
   top: 0;
   left: 0;
@@ -52,40 +50,45 @@ export const SideMenu = styled.nav`
     font-size: 1rem;
     padding: 2rem 0;
     font-weight: bold;
-    color: blue;
+    color: #376495;
     text-decoration: none;
   }
 `;
 const SidebarParent = styled.div`
-  background: blue;
+  background: #376495;
   width: 150px;
   height: 100vh;
-  margin-top: 0;
+  margin-top: 2rem;
 `;
 const SidebarItem = styled.div<Props>`
-  padding: 16px 24px;
+  /* padding: 16px 24px; */
   /* transition: all 0.25s ease-in-out; */
   //Change the background color if 'active' prop is received
-  background: ${(props) => (props.isActive ? "gray" : "")};
-  margin: 4px 12px;
-  border-radius: 4px;
+
+  box-shadow: 0px 0px 1px #888888;
+  border-right: ${(props) => (props.isActive ? "2px solid #F1F1F1" : "")};
+  border-bottom: ${(props) => (props.isActive ? "0.1em solid #F1F1F1" : "")};
+  background-color: ${(props) => (props.isActive ? "#47709D" : "")};
+  /* margin: 4px 12px; */
 
   p {
     color: white;
     font-weight: bold;
     text-decoration: none;
+    padding: 10px 10px 10px 0px;
   }
 
   &:hover {
     cursor: pointer;
   }
 
-  &:hover:not(:first-child) {
-    background: blue;
+  &:hover {
+    background: #c0bfbf;
   }
 `;
 export const Avatar = styled.div`
   width: 5rem;
   height: 5rem;
   margin-left: 2.5rem;
+  margin-top: 2.5rem;
 `;

@@ -6,7 +6,7 @@ export const Client = () => (
     <Switch>
       <div>as</div>
       {console.log(useLocation())}
-      <Route exact path={"/client/home"} component={Home} />
+      <Route exact path="/client" component={Home} />
     </Switch>
   </div>
 );
