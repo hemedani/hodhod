@@ -17,9 +17,6 @@ export const Home = () => {
         <Box boxShadow="none">
           <img src={thisweekdebts} alt="totaltrans" />
         </Box>
-        <Box boxShadow="none">
-          <img src={thisweekpayments} alt="totaltrans" />
-        </Box>
       </Box>
     </Box>
   );
