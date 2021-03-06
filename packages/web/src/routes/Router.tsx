@@ -8,7 +8,6 @@ export const Router = () => (
   <Switch>
     <Route exact path={Path.home} component={Login} />
     <Route path={Path.sellerdatainput} component={SellerRegistration} />
-    <Route path={"/client"} component={Client} />
-    {/* <Route path={Path.userPanel} component={UserPanelHome} /> */}
+    <Route path={Path.client} component={Client} />
   </Switch>
 );

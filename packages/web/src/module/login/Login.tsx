@@ -6,23 +6,31 @@ import { Page } from "../components/wrappers/Page";
 import { Card } from "../components/wrappers/Card";
 import { Box } from "../components/wrappers/Box";
 import { Sidebar } from "../components/sidebar/Sidebar";
+import NavBar from "../components/navbar/NavBar";
+import { Wrapper } from "../components/wrappers/Wrapper";
 
 export const Login = () => {
   return (
-    <Page>
-      <Box flexDirection="row" boxShadow="none">
-        <Box>
-          <img style={{ maxWidth: "400px" }} src={logo} alt="logo" />
-        </Box>
-        <Box>
-          <Card style={{ flexDirection: "column" }}>
-            <img style={{ width: "5rem" }} src={phone} alt="phone" />
+    <>
+      <Wrapper>
+        <NavBar />
+      </Wrapper>
 
-            <InputForm />
-          </Card>
+      <Page>
+        <Box flexDirection="row" boxShadow="none">
+          <Box>
+            <img style={{ maxWidth: "350px" }} src={logo} alt="logo" />
+          </Box>
+          <Box>
+            <Card style={{ flexDirection: "column" }}>
+              <img style={{ width: "5rem" }} src={phone} alt="phone" />
+
+              <InputForm />
+            </Card>
+          </Box>
         </Box>
-      </Box>
-      <Sidebar />
-    </Page>
+        {/* <Sidebar /> */}
+      </Page>
+    </>
   );
 };

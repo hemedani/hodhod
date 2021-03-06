@@ -10,8 +10,14 @@ export const Sidebar = () => {
   return (
     <SideMenu>
       <Avatar>
-        <img src={user} alt="user" style={{ width: "80px" }} />
+        <img
+          src={user}
+          alt="user"
+          style={{ width: "60px", borderRadius: "50%" }}
+        />
       </Avatar>
+      <P>کاربر</P>
+      <P>تلفن</P>
       <SidebarParent>
         {SidebarItems.map((item, index) => {
           return (
@@ -34,61 +40,59 @@ interface Props {
 export const SideMenu = styled.nav`
   display: flex;
   flex-direction: column;
-  background: #376495;
+  background: #027558;
   min-height: 100%;
   text-align: right;
   position: sticky;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
-
-  /* @media (max-width: ${({ theme }) => theme.mobile}) {
-    width: 100%;
-  } */
-
   a {
     font-size: 1rem;
     padding: 2rem 0;
-    font-weight: bold;
-    color: #376495;
+    color: #027558;
     text-decoration: none;
   }
 `;
 const SidebarParent = styled.div`
-  background: #376495;
+  background: #027558;
   width: 150px;
   height: 100vh;
-  margin-top: 2rem;
+  margin-top: 1rem;
 `;
 const SidebarItem = styled.div<Props>`
-  /* padding: 16px 24px; */
-  /* transition: all 0.25s ease-in-out; */
-  //Change the background color if 'active' prop is received
-
-  box-shadow: 0px 0px 1px #888888;
-  border-right: ${(props) => (props.isActive ? "2px solid #F1F1F1" : "")};
-  border-bottom: ${(props) => (props.isActive ? "0.1em solid #F1F1F1" : "")};
-  background-color: ${(props) => (props.isActive ? "#47709D" : "")};
-  /* margin: 4px 12px; */
-
+  /* box-shadow: 0px -1px 1px 0.5px #888888; */
+  border-top: 0.1px solid #488e69;
+  border-right: ${(props) => (props.isActive ? "3px solid #FCB366" : "")};
+  border-bottom: ${(props) => (props.isActive ? "0.1em solid #FCB366" : "")};
+  background-color: ${(props) => (props.isActive ? "#027558" : "")};
   p {
     color: white;
-    font-weight: bold;
     text-decoration: none;
-    padding: 10px 10px 10px 0px;
+    padding: 12px 20px;
+    font-size: 0.8em;
   }
-
+  P:hover {
+    color: #027558;
+  }
   &:hover {
     cursor: pointer;
+    background-color: #c0bfbf;
   }
-
-  &:hover {
-    background: #c0bfbf;
+  :last-child {
+    border-bottom: 0.1px solid #488e69;
   }
 `;
 export const Avatar = styled.div`
-  width: 5rem;
-  height: 5rem;
-  margin-left: 2.5rem;
-  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+`;
+
+const P = styled.p`
+  align-self: center;
+  font-size: 0.9em;
+  color: white;
+  text-decoration: none;
+  margin: 7px 7px;
 `;

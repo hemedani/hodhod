@@ -17,6 +17,7 @@
     "leaflet": "^1.7.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-dropdown": "^1.9.2",
     "react-hook-form": "^6.13.1",
     "react-leaflet": "^3.1.0",
     "react-object-fit-cover": "^1.0.0",
