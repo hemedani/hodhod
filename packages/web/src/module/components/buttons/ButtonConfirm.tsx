@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
-export const ButtonConfirm = styled.button`
+interface Props {
+  backgroundcolor?: string;
+  buttonText?: string;
+  fontsize?: string;
+}
+
+export const ButtonShape = styled.button`
   display: inline-block;
   border-radius: 35px;
   padding: 0.5rem 0;
@@ -10,6 +16,37 @@ export const ButtonConfirm = styled.button`
   background-color: blue;
   border: 2px solid white;
   outline: none;
+<<<<<<< HEAD:packages/web/src/module/components/buttons/ButtonConfirm.tsx
   font-family: "vazir";
   font-weight: 900;
+=======
+  &:hover {
+    border-width: 2px;
+    transition: 0.2s;
+    background-color: black;
+  }
+
+  &:focus {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid;
+    border-bottom-color: #929292;
+    box-shadow: 0px 0px 2px white;
+  }
+>>>>>>> 48ca3d80d8b70f543d25fa1b7a0cc6bdd115fe42:packages/web/src/sharedCompnents/ButtonConfirm.tsx
 `;
+const ButtonText = styled.p`
+  font-size: white;
+`;
+
+export const Button: React.FC<Props> = ({
+  buttonText,
+  backgroundcolor,
+  fontsize,
+}) => {
+  return (
+    <ButtonShape>
+      <ButtonText>{buttonText}</ButtonText>
+    </ButtonShape>
+  );
+};
