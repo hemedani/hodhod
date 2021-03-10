@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Input } from "../../components/inputs/TextInput";
 import upload from "../../../assets/images/Upload.png";
 import { Card } from "../../components/wrappers/Card";
-import { ButtonConfirm } from "../../components/buttons/ButtonConfirm";
+import { Button } from "../../components/buttons/ButtonConfirm";
 import { Box } from "../../components/wrappers/Box";
 import { items } from "../../data/SellerCardElements";
 import { Page } from "../../components/wrappers/Page";
@@ -38,8 +38,8 @@ export const CenterCard = () => {
           <LeafletMap />
         </Box>
         <Box flexDirection="row" boxShadow="none">
-          <ButtonConfirm>ثبت نام</ButtonConfirm>
-          <ButtonConfirm>لغو</ButtonConfirm>
+          <Button>ثبت نام</Button>
+          <Button>لغو</Button>
         </Box>
       </Wrapper>
     </Page>

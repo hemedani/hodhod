@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Input } from "../sharedCompnents/TextInput";
-import map from "../Map.png";
-import upload from "../Upload.png";
-import { Button } from "../sharedCompnents/ButtonConfirm";
-import { Box, Card } from "./Box";
-import { Wrapper } from "../sharedCompnents/Wrapper";
-import { items } from "../sharedCompnents/CenterCardElements";
+import { Button } from "../module/components/buttons/ButtonConfirm";
+import { Input } from "../module/components/inputs/TextInput";
+import { Box } from "../module/components/wrappers/Box";
+import { Card } from "../module/components/wrappers/Card";
+import { Wrapper } from "../module/components/wrappers/Wrapper";
+import { items } from "../module/data/SellerCardElements";
+import upload from "../assets/images/Upload.png";
+import map from "../assets/images/Map.png";
 
 export const CenterRegFormCon = styled.div`
   display: flex;

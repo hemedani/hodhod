@@ -37,7 +37,7 @@ interface Props {
   isActive: boolean;
 }
 
-export const SideMenu = styled.nav`
+export const SideMenu = styled.div`
   display: flex;
   flex-direction: column;
   background: #027558;
@@ -73,12 +73,12 @@ const SidebarItem = styled.div<Props>`
     font-size: 0.8em;
   }
   P:hover {
-    color: #027558;
-  }
-  &:hover {
+    color: red;
     cursor: pointer;
-    background-color: #c0bfbf;
+    background-color: #afe2aa;
+    opacity: 27%;
   }
+
   :last-child {
     border-bottom: 0.1px solid #488e69;
   }

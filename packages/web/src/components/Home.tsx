@@ -1,10 +1,10 @@
 import React from "react";
-import { Wrapper } from "../sharedCompnents/Wrapper";
+import { Wrapper } from "../module/components/wrappers/Wrapper";
 
-import { Logo } from "../sharedCompnents/Logo";
+import Logo from "../assets/images/Logo.jpg";
 import logo from "../Logo.jpg";
 import phone from "../Phone.jpeg";
-import InputForm from "./InputForm";
+import InputForm from "../module/login/components/InputForm";
 import { Page } from "../sharedCompnents/Page";
 
 import { Box } from "./Box";
@@ -13,9 +13,9 @@ const Home = () => {
   return (
     <Page>
       <Wrapper>
-        <Logo>
+        <Box>
           <img style={{ maxWidth: "500px" }} src={logo} alt="logo" />
-        </Logo>
+        </Box>
 
         <Box>
           <img style={{ width: "5rem" }} src={phone} alt="phone" />

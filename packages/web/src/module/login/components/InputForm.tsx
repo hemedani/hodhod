@@ -4,13 +4,8 @@ import styled from "styled-components";
 // import { setPhoneAction } from "../States/phoneSlicer";
 // import { AppDispatch } from "../States/Store";
 import { useForm, SubmitHandler } from "react-hook-form";
-<<<<<<< HEAD:packages/web/src/module/login/components/InputForm.tsx
+import { Button } from "../../components/buttons/ButtonConfirm";
 import { TextInput } from "../../components/inputs/TextInput";
-import { ButtonConfirm } from "../../components/buttons/ButtonConfirm";
-=======
-import { TextInput } from "../sharedCompnents/TextInput";
-import { Button } from "../sharedCompnents/ButtonConfirm";
->>>>>>> 48ca3d80d8b70f543d25fa1b7a0cc6bdd115fe42:packages/web/src/components/InputForm.tsx
 
 export const InputFormCon = styled.div`
   display: flex;
@@ -124,11 +119,7 @@ const InputForm = () => {
             )}
           </>
         )}
-<<<<<<< HEAD:packages/web/src/module/login/components/InputForm.tsx
-        <ButtonConfirm style={{ width: "100%" }}>
-=======
         <Button buttonText={"submit"} backgroundcolor={"white"}>
->>>>>>> 48ca3d80d8b70f543d25fa1b7a0cc6bdd115fe42:packages/web/src/components/InputForm.tsx
           {phoneExist ? "تایید" : "دریافت کد"}
         </Button>
       </form>

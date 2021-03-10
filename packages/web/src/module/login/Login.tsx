@@ -17,16 +17,16 @@ export const Login = () => {
       </Wrapper>
 
       <Page>
+        <Box>
+          <Card style={{ flexDirection: "column" }}>
+            <img style={{ width: "5rem" }} src={phone} alt="phone" />
+
+            <InputForm />
+          </Card>
+        </Box>
         <Box flexDirection="row" boxShadow="none">
           <Box>
             <img style={{ maxWidth: "350px" }} src={logo} alt="logo" />
-          </Box>
-          <Box>
-            <Card style={{ flexDirection: "column" }}>
-              <img style={{ width: "5rem" }} src={phone} alt="phone" />
-
-              <InputForm />
-            </Card>
           </Box>
         </Box>
         {/* <Sidebar /> */}

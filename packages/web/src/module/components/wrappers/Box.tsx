@@ -10,6 +10,7 @@ export const Box: React.FC<Props> = ({
   width,
   minWidth,
   boxShadow,
+  margin,
 }) => {
   return (
     <FormCon
@@ -19,6 +20,7 @@ export const Box: React.FC<Props> = ({
       minHeight={minHeight}
       minWidth={minWidth}
       boxShadow={boxShadow}
+      margin={margin}
     >
       {headerText && <HeaderBox>{headerText}</HeaderBox>}
       <BodyBox
@@ -42,12 +44,12 @@ interface Props {
   width?: string;
   minWidth?: string;
   boxShadow?: string;
+  margin?: string;
 }
 export const FormCon = styled.div<Props>`
   display: flex;
   flex-wrap: wrap;
   border-radius: 0.4rem;
-  padding: 1rem 4rem;
   box-shadow: ${(props) => (props.boxShadow ? props.boxShadow : shadowValues)};
   flex-direction: column;
   height: ${(props) => props.height};
@@ -55,7 +57,7 @@ export const FormCon = styled.div<Props>`
   min-height: ${(props) => props.minHeight};
   min-width: ${(props) => props.minWidth};
   justify-content: space-between;
-  margin: 10px;
+  margin: ${(props) => (props.margin ? props.margin : "")};
 `;
 const HeaderBox = styled.h2`
   display: flex;
@@ -65,7 +67,7 @@ const BodyBox = styled.div<Props>`
   display: flex;
   flex-direction: ${(props) => props.flexDirection};
   height: ${(props) => props.height};
-  width: ${(props) => props.width};
+  /* width: ${(props) => props.width}; */
   min-height: ${(props) => props.minHeight};
   min-width: ${(props) => props.minWidth};
 `;

@@ -6,7 +6,7 @@ interface Props {
   fontsize?: string;
 }
 
-export const ButtonShape = styled.button`
+export const ButtonShape = styled.button<Props>`
   display: inline-block;
   border-radius: 35px;
   padding: 0.5rem 0;
@@ -16,6 +16,7 @@ export const ButtonShape = styled.button`
   background-color: blue;
   border: 2px solid white;
   outline: none;
+  background-color: ${(props) => props.backgroundcolor};
   &:hover {
     border-width: 2px;
     transition: 0.2s;
@@ -30,8 +31,8 @@ export const ButtonShape = styled.button`
     box-shadow: 0px 0px 2px white;
   }
 `;
-const ButtonText = styled.p`
-  font-size: white;
+const ButtonText = styled.p<Props>`
+  font-size: ${(props) => props.fontsize};
 `;
 
 export const Button: React.FC<Props> = ({
@@ -40,8 +41,8 @@ export const Button: React.FC<Props> = ({
   fontsize,
 }) => {
   return (
-    <ButtonShape>
-      <ButtonText>{buttonText}</ButtonText>
+    <ButtonShape backgroundcolor={backgroundcolor}>
+      <ButtonText fontsize={fontsize}>{buttonText}</ButtonText>
     </ButtonShape>
   );
 };

@@ -10,7 +10,9 @@ export const SidebarItems = [
     route: Path.sellerdatainput,
   },
   {
-    name: "پنل کاربر",
+    name: "داشبورد ",
     route: Path.client,
   },
+  { name: "بدهی ها", route: Path.debts },
+  { name: "مراکز", route: Path.centers },
 ];

@@ -1,20 +1,15 @@
 import React from "react";
 import { Route, Switch, useLocation } from "react-router";
-import { Router } from "../../routes/Router";
 import NavBar from "../components/navbar/NavBar";
 import { Sidebar } from "../components/sidebar/Sidebar";
 import { Page } from "../components/wrappers/Page";
 import { Wrapper } from "../components/wrappers/Wrapper";
-import { Home } from "./Home";
-export const Client = () => (
+export const Debts = () => (
   <>
     <Page>
       <Sidebar />
       <Wrapper>
         <NavBar />
-        <Switch>
-          <Route path={useLocation().pathname} component={Home} />
-        </Switch>
       </Wrapper>
     </Page>
   </>

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const Page = styled.main`
+export const Page = styled.div`
   display: flex;
-  /* justify-content: center; */
-  width: 100%;
-  justify-content: flex-end;
+  direction: rtl;
+  justify-content: center;
+  justify-content: space-around;
   /* border: 1px solid red; */
 `;

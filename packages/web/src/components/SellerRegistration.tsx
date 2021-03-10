@@ -1,12 +1,12 @@
 import { Page } from "../sharedCompnents/Page";
-import { Sidebar } from "../sharedCompnents/Sidebar";
+import { Sidebar } from "../module/components/sidebar/Sidebar";
 import React from "react";
 
 import { CenterCard } from "./CenterCard";
 
-import { Wrapper } from "../sharedCompnents/Wrapper";
+import { Wrapper } from "../module/components/wrappers/Wrapper";
 import { Box } from "./Box";
-import { TextInput } from "../sharedCompnents/TextInput";
+import { TextInput } from "../module/components/inputs/TextInput";
 import { SellerCard } from "./SellerCard";
 
 export const SellerRegistration = () => {

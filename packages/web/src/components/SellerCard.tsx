@@ -2,8 +2,8 @@ import React from "react";
 
 import styled from "styled-components";
 
-import { Input } from "../sharedCompnents/TextInput";
-import { items } from "../sharedCompnents/SellerCardElements";
+import { Input } from "../module/components/inputs/TextInput";
+import { items } from "../module/data/SellerCardElements";
 import { Card } from "./Box";
 export const SellerRegFormCon = styled.div`
   display: flex;

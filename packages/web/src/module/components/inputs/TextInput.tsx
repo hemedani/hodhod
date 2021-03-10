@@ -10,12 +10,7 @@ interface Props {
   name?: string;
   placeholder?: string;
   dir?: string;
-<<<<<<< HEAD:packages/web/src/module/components/inputs/TextInput.tsx
-  type?: inpType;
-=======
   type: "email" | "password" | "number" | "text" | string;
-  name?: string;
->>>>>>> 48ca3d80d8b70f543d25fa1b7a0cc6bdd115fe42:packages/web/src/sharedCompnents/TextInput.tsx
   onClick?: () => any;
   onChange?: () => any;
 }
@@ -51,11 +46,7 @@ export const TextInput = styled.input.attrs((props) => ({
 export const Input: React.FC<Props> = ({ dir, placeholder, type, name }) => {
   return (
     <CardElement>
-<<<<<<< HEAD:packages/web/src/module/components/inputs/TextInput.tsx
-      <TextInput type={type} dir={dir} placeholder={placeholder} name={name} />
-=======
       <TextInput name={name} type={type} dir={dir} placeholder={placeholder} />
->>>>>>> 48ca3d80d8b70f543d25fa1b7a0cc6bdd115fe42:packages/web/src/sharedCompnents/TextInput.tsx
     </CardElement>
   );
 };
